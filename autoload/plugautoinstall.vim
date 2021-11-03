@@ -1,5 +1,5 @@
 " A function that automatically installs plugs if new ones are added.
-function PlugInstallAsNeeded()
+function! s:install_as_needed() 
 	let l:install_file = stdpath('data') . '/installed.txt'
 	let l:need_refresh = 0
 	let l:plugin_repos = keys(g:plugs)
@@ -18,7 +18,7 @@ endfunction
 
 
 " A function that automatically deletes plugs if they are no longer used.
-function PlugUninstallAsNeeded()
+function! s:uninstall_as_needed() 
 	let l:install_file = stdpath('data') . '/installed.txt'
 	let l:need_clean = 0
 	let l:plugin_repos = keys(g:plugs)
@@ -45,8 +45,8 @@ endfunction
 
 " A function that automatically installs/deletes plugs based on if they are
 " referenced above.
-function PlugManageAsNeeded()
-	call PlugInstallAsNeeded()
-	call PlugUninstallAsNeeded()
+function! plugautoinstall#manage() 
+	call s:install_as_needed()
+	call s:uninstall_as_needed()
 endfunction
 
