@@ -16,4 +16,4 @@ This is only compatible with VimPlug. All of it's testing is done on Neovim, but
 0. Add `Plug "ReallySnazzy/vim-plug-auto-install"` to your init.vim/vimrc
 1. Run :PlugInstall
 3. Restart Vim/Neovim
-4. Add `call PlugManageAsNeeded()` to the last line of your init.vim / vimrc
+4. Add `call plugautoinstall#manage()` to the last line of your init.vim / vimrc
